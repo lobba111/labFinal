@@ -12,7 +12,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string input = "29535123p48723487597645723645";
-            BigInteger b = 0;
+            BigInteger b = 0;//Håller värdet på alla mina träffar
 
 
 
