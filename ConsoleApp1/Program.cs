@@ -11,15 +11,15 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Skriv in ett tal: ");
-            //string input = Console.ReadLine();
-            string input = "29535123p48723487597645723645"; // min start
+            Console.WriteLine("Skriv in ett tal: ");
+            string input = Console.ReadLine();
+            //string input = "29535123p48723487597645723645"; // min start
             BigInteger allnumbers = 0;//Håller värdet på alla mina träffar
 
 
 
 
-            for (int i = 0; i < input.Length - 1; i++) 
+            for (int i = 0; i < input.Length - 1; i++)
             {
                 char c = input[i];
                 int index = input.IndexOf(c, i + 1); //här inne sker sorteringen
@@ -32,18 +32,18 @@ namespace ConsoleApp1
 
                         if (i == 0)//nu är det dags att sätta färg på samt skriva ut texten
                         {
-                            Console.ForegroundColor = ConsoleColor.DarkCyan;  
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.Write(newHit);
                             Console.ResetColor();
                             Console.Write(input.Substring(index + 1));
                             Console.WriteLine();
-                            allnumbers += BigInteger.Parse(newHit);
+                            allnumbers += BigInteger.Parse(newHit);//Plussar på min biginteger, convertar min string till ett tal.
 
                         }
                         else if (index == input.Length - 1)
                         {
                             Console.Write(input.Substring(0, i));
-                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.Write(newHit);
                             Console.ResetColor();
                             allnumbers += BigInteger.Parse(newHit);
@@ -55,7 +55,7 @@ namespace ConsoleApp1
                         else if (i > 0 && index > 0 && index < input.Length - 1)
                         {
                             Console.Write(input.Substring(0, i));
-                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             Console.Write(newHit);
                             Console.ResetColor();
                             Console.Write(input.Substring(index + 1));
@@ -87,7 +87,7 @@ namespace ConsoleApp1
 
             }
 
-         Console.WriteLine("Summan utav alla träffar blir = {0}", allnumbers);
+            Console.WriteLine("Summan utav alla träffar blir = {0}", allnumbers);
 
         }
 
