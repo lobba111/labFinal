@@ -11,10 +11,10 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Skriv in ett tal: ");
-            string input = Console.ReadLine();
-            //string input = "29535123p48723487597645723645"; // min start
-            BigInteger b = 0;//Håller värdet på alla mina träffar
+            //Console.WriteLine("Skriv in ett tal: ");
+            //string input = Console.ReadLine();
+            string input = "29535123p48723487597645723645"; // min start
+            BigInteger allnumbers = 0;//Håller värdet på alla mina träffar
 
 
 
@@ -37,7 +37,7 @@ namespace ConsoleApp1
                             Console.ResetColor();
                             Console.Write(input.Substring(index + 1));
                             Console.WriteLine();
-                            b += BigInteger.Parse(newHit);
+                            allnumbers += BigInteger.Parse(newHit);
 
                         }
                         else if (index == input.Length - 1)
@@ -46,7 +46,7 @@ namespace ConsoleApp1
                             Console.ForegroundColor = ConsoleColor.DarkCyan;
                             Console.Write(newHit);
                             Console.ResetColor();
-                            b += BigInteger.Parse(newHit);
+                            allnumbers += BigInteger.Parse(newHit);
                             Console.WriteLine();
 
 
@@ -60,7 +60,7 @@ namespace ConsoleApp1
                             Console.ResetColor();
                             Console.Write(input.Substring(index + 1));
                             Console.WriteLine();
-                            b += BigInteger.Parse(newHit);
+                            allnumbers += BigInteger.Parse(newHit);
 
                         }
 
@@ -87,7 +87,7 @@ namespace ConsoleApp1
 
             }
 
-         Console.WriteLine("Summan utav alla träffar blir = {0}", b);
+         Console.WriteLine("Summan utav alla träffar blir = {0}", allnumbers);
 
         }
 
