@@ -11,35 +11,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string input = "29535123p48723487597645723645"; // min start
+            Console.WriteLine("Skriv in ett tal: ");
+            string input = Console.ReadLine();
+            //string input = "29535123p48723487597645723645"; // min start
             BigInteger b = 0;//Håller värdet på alla mina träffar
 
 
 
 
-            for (int i = 0; i < input.Length - 1; i++)
+            for (int i = 0; i < input.Length - 1; i++) 
             {
-
                 char c = input[i];
-
-                int index = input.IndexOf(c, i + 1);
-
-
-
+                int index = input.IndexOf(c, i + 1); //här inne sker sorteringen
                 int lenght = index - i + 1;
-
-
-
-
                 if (index != -1)
                 {
-                    string newHit = input.Substring(i, lenght);
-                    if (IsDigitsOnly(newHit))
+                    string newHit = input.Substring(i, lenght);// här klipps de matchade träffarna ut
+                    if (IsDigitsOnly(newHit))// här kallar jag på en metod för att se att den utklippta strängen bara innehåller siffror
                     {
 
-                        if (i == 0)
+                        if (i == 0)//nu är det dags att sätta färg på samt skriva ut texten
                         {
-                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;  
                             Console.Write(newHit);
                             Console.ResetColor();
                             Console.Write(input.Substring(index + 1));
@@ -94,7 +87,7 @@ namespace ConsoleApp1
 
             }
 
-            Console.WriteLine("Summan utav alla träffar blir = {0}", b);
+         Console.WriteLine("Summan utav alla träffar blir = {0}", b);
 
         }
 
@@ -103,7 +96,7 @@ namespace ConsoleApp1
 
 
 
-        private static bool IsDigitsOnly(string newHit)
+        private static bool IsDigitsOnly(string newHit) //här är metoden för att se så att det bara är siffror inne i strängen, är det inte det, kasta,börja om.
         {
             foreach (char c in newHit)
             {
